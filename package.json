@@ -8,9 +8,9 @@
   "scripts": {
     "frontend": "yarn workspace web dev",
     "backend": "yarn workspace api start:dev",
-    "prisma:generate": "yarn workspace api prisma generate",
-    "prisma:migrate": "yarn workspace api prisma migrate dev",
-    "prisma:studio": "yarn workspace api prisma studio",
+    "prisma:generate": "yarn workspace api prisma:generate",
+    "prisma:migrate": "yarn workspace api prisma:migrate",
+    "prisma:studio": "yarn workspace api prisma:studio",
     "build:api": "yarn workspace api build",
     "start:api": "yarn workspace api start:prod"
   }
