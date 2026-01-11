@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: bankly-api
+    runtime: node
+    plan: free
+    buildCommand: yarn install && yarn workspace api prisma generate && yarn workspace api build
+    startCommand: yarn workspace api start:prod
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: bankly-db
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: 3000
+
+databases:
+  - name: bankly-db
+    plan: free
