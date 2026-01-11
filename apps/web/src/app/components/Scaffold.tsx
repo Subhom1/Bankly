@@ -1,6 +1,8 @@
+"use client";
+
 import { ReactNode } from "react";
 import Sidebar from "@/app/components/Sidebar";
-import Link from "next/link";
+import { useAuth } from "@/app/hooks/useAuth";
 
 interface LayoutProps {
   children: ReactNode;
@@ -8,6 +10,9 @@ interface LayoutProps {
 }
 
 export default function Layout({ children, title }: LayoutProps) {
+  const { user, logout } = useAuth();
+  const initial = user?.email?.charAt(0).toUpperCase() || "U";
+
   return (
     <div className="min-h-screen bg-gray-50 flex">
       <Sidebar />
@@ -19,17 +24,19 @@ export default function Layout({ children, title }: LayoutProps) {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">
-                U
+                {initial}
               </div>
-              <span className="text-sm font-medium text-gray-700">User</span>
+              <span className="text-sm font-medium text-gray-700">
+                {user?.email || "User"}
+              </span>
             </div>
 
-            <Link
-              href="/login"
-              className="text-sm font-medium text-red-600 hover:text-red-700 transition-colors"
+            <button
+              onClick={logout}
+              className="text-sm font-medium text-red-600 hover:text-red-700 transition-colors cursor-pointer"
             >
               Sign out
-            </Link>
+            </button>
           </div>
         </header>
         <main className="flex-1 p-8 overflow-y-auto">{children}</main>
