@@ -2,6 +2,8 @@
 
 Bankly is a secure, full-stack digital banking application built with a modern monorepo architecture. It features real-time currency management, secure peer-to-peer transfers, and atomic currency exchanges.
 
+<img src="https://raw.githubusercontent.com/Subhom1/mygitsrc/refs/heads/master/src/Bankly.png" alt="mobile-light-preview">
+
 ## 🚀 Key Features
 
 - **Full-Stack Authentication**: Secure registration and login using JWT and BCrypt hashing.
