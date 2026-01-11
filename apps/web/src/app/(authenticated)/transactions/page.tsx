@@ -24,7 +24,7 @@ export default function Transactions() {
         const fetchTransactions = async () => {
             setIsLoading(true);
             try {
-                const result = await transactionService.getTransactions(type, page, 10);
+                const result = await transactionService.getTransactions(type, page, 7);
                 setTransactions(result.data);
                 setTotalPages(result.meta.lastPage);
             } catch (err) {
