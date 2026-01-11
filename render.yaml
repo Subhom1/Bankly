@@ -3,8 +3,8 @@ services:
     name: bankly-api
     runtime: node
     plan: free
-    buildCommand: yarn install && yarn workspace api prisma generate && yarn workspace api build
-    startCommand: yarn workspace api start:prod
+    buildCommand: yarn install && yarn prisma:generate && yarn build:api
+    startCommand: yarn start:api
     envVars:
       - key: DATABASE_URL
         fromDatabase:
