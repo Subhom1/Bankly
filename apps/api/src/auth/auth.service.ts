@@ -30,6 +30,14 @@ export class AuthService {
                 },
             });
 
+            // Create default accounts
+            await this.prisma.account.createMany({
+                data: [
+                    { userId: user.id, currency: 'USD', balance: 1000 },
+                    { userId: user.id, currency: 'EUR', balance: 500 },
+                ],
+            });
+
             const { password, ...result } = user;
             return result;
         } catch (error) {
