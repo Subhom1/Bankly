@@ -6,6 +6,12 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "yarn workspace web dev"
+    "frontend": "yarn workspace web dev",
+    "backend": "yarn workspace api start:dev",
+    "prisma:generate": "yarn workspace api prisma generate",
+    "prisma:migrate": "yarn workspace api prisma migrate dev",
+    "prisma:studio": "yarn workspace api prisma studio"
+
+
   }
 }
