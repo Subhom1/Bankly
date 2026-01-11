@@ -1,6 +1,7 @@
 # Bankly - Modern Digital Banking Platform
 
 Bankly is a secure, full-stack digital banking application built with a modern monorepo architecture. It features real-time currency management, secure peer-to-peer transfers, and atomic currency exchanges.
+
 Visit preview deployed on Frontend on Vercel and Backend & Database on Render: [Link](https://bankly-web.vercel.app/) 
 
 <img src="https://raw.githubusercontent.com/Subhom1/mygitsrc/refs/heads/master/src/Bankly.png" alt="mobile-light-preview">
